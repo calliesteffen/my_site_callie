@@ -5,7 +5,7 @@
     <link>/project/</link>
       <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 09 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Projects</title>
@@ -13,64 +13,460 @@
     </image>
     
     <item>
-      <title>My awesome post!</title>
-      <link>/project/my_new_project/</link>
-      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/project/my_new_project/</guid>
-      <description>
-
-
-
-</description>
-    </item>
-    
-    <item>
-      <title>External Project</title>
-      <link>/project/external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/external-project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Internal Project</title>
-      <link>/project/internal-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/internal-project/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Awesome stuff</title>
-      <link>/project/awesome_project/</link>
+      <title>Hawaiian Islands: Landcover and Watersheds</title>
+      <link>/project/hawaii/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/project/awesome_project/</guid>
+      <guid>/project/hawaii/</guid>
       <description>
 
 
-&lt;div id=&#34;r-markdown&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;R Markdown&lt;/h2&gt;
-&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;When you click the &lt;strong&gt;Knit&lt;/strong&gt; button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Introduction:&lt;/h1&gt;
+&lt;p&gt;This analysis will explore land use and watersheds for the big island of Hawaii. The land use and land cover data was primarily based on the interpretation of aerial photography from the 1970’s and 1980’s, with secondary sources including land use maps and surveys. Watersheds are shown for the 8 major islands and measured in square miles.&lt;/p&gt;
+&lt;p&gt;See metadata (linked below) for specific watershed names and more detailed descriptions of what is included in the 7 categories of land cover.&lt;/p&gt;
+&lt;p&gt;Land use Data Source: Land Use Land Cover of main Hawaiian Islands as of 1976 Source: 1:100,000 1976 Digital GIRAS (Geographic Information Retrieval and Analysis) files. &lt;a href=&#34;http://geoportal.hawaii.gov/datasets/land-use-land-cover-lulc&#34; class=&#34;uri&#34;&gt;http://geoportal.hawaii.gov/datasets/land-use-land-cover-lulc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Watershed Data Source: State of Hawaii Commission on Water Resource Management (CWRM), 2008. &lt;a href=&#34;http://geoportal.hawaii.gov/datasets/watersheds&#34; class=&#34;uri&#34;&gt;http://geoportal.hawaii.gov/datasets/watersheds&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;images/hawaii.png&#34; alt=&#34;Shoreline Imagery of Hawaiian Islands. Photo Source: University of Hawaii MANOA, Coastal Geology Group&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Shoreline Imagery of Hawaiian Islands. Photo Source: University of Hawaii MANOA, Coastal Geology Group&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id=&#34;including-plots&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Including Plots&lt;/h2&gt;
-&lt;p&gt;You can also embed plots, for example:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/project/awesome_project/index_files/figure-html/pressure-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Note that the &lt;code&gt;echo = FALSE&lt;/code&gt; parameter was added to the code chunk to prevent printing of the R code that generated the plot.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-analysis-and-cleaning&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Data Analysis and Cleaning&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(watershed)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(landuse)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;st_crs(landuse) #4326
+st_crs(watershed) #4326
+
+# recategorize landcover column data into categories based off of the metadata so we have fewer categories to visualize making for a cleaner map
+
+landuse_metadata &amp;lt;- landuse %&amp;gt;%
+  mutate(
+    landcover_md = case_when(
+      landcover %in% c(&amp;quot;Residential&amp;quot;,
+                       &amp;quot;Commercial and Services&amp;quot;,
+                       &amp;quot;Industrial&amp;quot;, 
+                       &amp;quot;Transportation, Communications and Utilities&amp;quot;, 
+                       &amp;quot;Industrial and Commercial Complexes&amp;quot;,
+                       &amp;quot;Mixed Urban or Built-up Land&amp;quot;,
+                       &amp;quot;Other Urban or Built-up Land&amp;quot;) ~&amp;quot;Urban or Built-up Land&amp;quot;,
+      landcover %in% c(&amp;quot;Cropland and Pasture&amp;quot;, 
+                       &amp;quot;Orchards, Groves, Vineyards, Nurseries and Ornamental Horticultural Areas&amp;quot;, &amp;quot;Confined Feeding Operations&amp;quot;,&amp;quot;Other Agricultural Land&amp;quot;) ~ &amp;quot;Agricultural Land&amp;quot;,
+      landcover %in% c(&amp;quot;Herbaceous Rangeland&amp;quot;,
+                       &amp;quot;Shrub and Brush Rangeland&amp;quot;,
+                       &amp;quot;Mixed Rangeland&amp;quot;) ~ &amp;quot;Rangeland&amp;quot;,
+      landcover %in% c(&amp;quot;Deciduous Forest Land&amp;quot;,
+                       &amp;quot;Evergreen Forest Land&amp;quot;,
+                       &amp;quot;Mixed Forest Land&amp;quot;) ~ &amp;quot;Forest Land&amp;quot;,
+      landcover %in% c(&amp;quot;Streams and Canals&amp;quot;,
+                       &amp;quot;Lakes&amp;quot;,
+                       &amp;quot;Reservoirs&amp;quot;,
+                       &amp;quot;Bays and Estuaries&amp;quot;) ~ &amp;quot;Water&amp;quot;,
+      landcover %in% c(&amp;quot;Dry Salt Flats&amp;quot;,
+                       &amp;quot;Beaches&amp;quot;,
+                       &amp;quot;Sandy Areas Other than Beaches&amp;quot;,
+                       &amp;quot;Bare Exposed Rock&amp;quot;,
+                       &amp;quot;Strip Mines, Quarries and Gravel Pits&amp;quot;,
+                       &amp;quot;Transitional Areas&amp;quot;,
+                       &amp;quot;Mixed Barren Land&amp;quot;) ~ &amp;quot;Barren Land&amp;quot; ,
+       landcover %in% c(&amp;quot;Shrub and Brush Tundra&amp;quot;,
+                       &amp;quot;Herbaceous Tundra&amp;quot;,
+                       &amp;quot;Bare Ground&amp;quot;,
+                       &amp;quot;Wet Tundra&amp;quot;,
+                       &amp;quot;Mixed Tundra&amp;quot;) ~ &amp;quot;Tundra&amp;quot; ,
+       landcover %in% c(&amp;quot;Perrenial Snowfield&amp;quot;,
+                       &amp;quot;Glaciers&amp;quot;) ~ &amp;quot;Perrenial Snow&amp;quot;,
+      landcover %in% c(&amp;quot;Forested Wetland&amp;quot;,
+                       &amp;quot;Nonforested Wetland&amp;quot;) ~ &amp;quot;Wetland&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;map-of-land-cover-categories-for-all-8-islands-hawaii&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Map of Land Cover Categories for all 8 islands (Hawaii)&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Plot for Land Use on all of hawaiian islands
+landcover_gg &amp;lt;- ggplot(data = landuse_metadata) +
+  geom_sf(data = landuse_metadata,color = &amp;quot;NA&amp;quot;, aes(fill = landcover_md)) +
+  xlab(&amp;quot;Longitude&amp;quot;) + ylab(&amp;quot;Latitude&amp;quot;) +
+  annotation_scale(location = &amp;quot;bl&amp;quot;, width_hint = 0.5) +
+    annotation_north_arrow(location = &amp;quot;bl&amp;quot;, which_north = &amp;quot;true&amp;quot;, 
+        pad_x = unit(0.75, &amp;quot;in&amp;quot;), pad_y = unit(0.5, &amp;quot;in&amp;quot;),
+        style = north_arrow_fancy_orienteering) +
+    coord_sf(crs = st_crs(4326)) +
+  labs(fill=&amp;#39;Land Cover Category&amp;#39;) +
+  scale_fill_discrete(na.translate=F)
+
+landcover_gg&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:unnamed-chunk-2&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/project/hawaii/index_files/figure-html/unnamed-chunk-2-1.png&#34; alt=&#34;Figure 1. Land Cover categories for all 8 islands in Hawaii. Data was recategorized into 7 main categories.&#34; width=&#34;672&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1: Figure 1. Land Cover categories for all 8 islands in Hawaii. Data was recategorized into 7 main categories.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;map-of-watersheds-for-all-8-islands-hawaii&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Map of Watersheds for all 8 islands (Hawaii)&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#plot for watersheds on all of hawaiian islands
+
+ggplot(data = watershed) +
+  geom_sf(data = watershed,color = &amp;quot;NA&amp;quot;, aes(fill = area_sqmi)) +
+  xlab(&amp;quot;Longitude&amp;quot;) + ylab(&amp;quot;Latitude&amp;quot;) +
+  annotation_scale(location = &amp;quot;bl&amp;quot;, width_hint = 0.5) +
+    annotation_north_arrow(location = &amp;quot;bl&amp;quot;, which_north = &amp;quot;true&amp;quot;, 
+        pad_x = unit(0.75, &amp;quot;in&amp;quot;), pad_y = unit(0.5, &amp;quot;in&amp;quot;),
+        style = north_arrow_fancy_orienteering) +
+    coord_sf(crs = st_crs(4326)) +
+   labs(fill=&amp;#39;Area of Watershed (sqmi)&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:unnamed-chunk-3&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/project/hawaii/index_files/figure-html/unnamed-chunk-3-1.png&#34; alt=&#34;Figure 2. Watersheds of the 8 islands of Hawaii. There are 558 watersheds between the 8 islands and they are measured in square miles and each has an individual name.&#34; width=&#34;672&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 2: Figure 2. Watersheds of the 8 islands of Hawaii. There are 558 watersheds between the 8 islands and they are measured in square miles and each has an individual name.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PCA Analysis of Dairy Products</title>
+      <link>/project/pca_project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/pca_project/</guid>
+      <description>
+
+
+&lt;div id=&#34;introduction-pca-of-usda-food-group-eggs-and-dairy-products&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Introduction: PCA of USDA Food Group: Eggs and Dairy Products&lt;/h1&gt;
+&lt;p&gt;This Principle Component Analysis (PCA) explores relationships of nutrient variables of Dairy and Egg Products based off data from the United States Department of Agriculture. By performing a PCA, we can simplify the dimensions of the data while still explaining a majority of the variance&lt;/p&gt;
+&lt;p&gt;Data source: U.S. Department of Agriculture, Agricultural Research Service. 2018. USDA Food and Nutrient Database for Dietary Studies 2015-2016. Food Surveys Research Group Home Page, &lt;a href=&#34;http://www.ars.usda.gov/nea/bhnrc/fsrg&#34; class=&#34;uri&#34;&gt;http://www.ars.usda.gov/nea/bhnrc/fsrg&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;images/usda_dairy.png&#34; alt=&#34;Dairy Products. Photo Source: USDA&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Dairy Products. Photo Source: USDA&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-cleaning-for-analysis&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Data Cleaning for Analysis&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Interested in exploring the food group of dairy and eggs, so will filter data for that food group and differnt nutrient aspects
+
+dairy_df &amp;lt;- usda %&amp;gt;% 
+  clean_names() %&amp;gt;% 
+  filter(food_group == c(&amp;quot;Dairy and Egg Products&amp;quot;)) %&amp;gt;% 
+  select(food_group,protein_g,sugar_g,fat_g,carb_g,energy_kcal,fiber_g)
+
+#Exploring any NAs
+summary(dairy_df)
+skim(dairy_df)
+gg_miss_var(dairy_df)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/PCA_project/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# No missing values&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;analysis-running-pca-on-dairy-data&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Analysis: Running PCA on Dairy Data&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#pca
+dairy_pca &amp;lt;- prcomp(dairy_df[2:7], scale = TRUE)
+
+dairy_pca
+
+summary(dairy_pca)
+##my frist two PC explain ~69% of data 
+
+ 
+plot(dairy_pca) #shows variance&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;biplot(dairy_pca) #looks messy&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Between Principle Component 1 and Principle Component 2, ~69% of variance is captured. This simplifies the the number of dimensions, and by only using 2 of the 6 Principle Components (axes) we are still able to explain over half of the variance of the data.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;visualizing-biplot-of-pca&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Visualizing Biplot of PCA&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Visualize with ggfortify for a cleaner graph
+dairy_biplot &amp;lt;- autoplot(dairy_pca, 
+                      colour = NA,
+                      loadings.label = TRUE,
+                      loadings.label.size = 4,
+                      loadings.label.colour = &amp;quot;black&amp;quot;,
+                      loadings.label.repel = TRUE) +
+    theme(axis.title = element_text(face=&amp;quot;bold&amp;quot;)) +
+  theme_minimal()
+  
+
+dairy_biplot &lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:unnamed-chunk-3&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/project/PCA_project/index_files/figure-html/unnamed-chunk-3-1.png&#34; alt=&#34;Figure 1.Principle Component Analysis of Nutrient Information on Egg and Dairy Products to Explore Relationship Between Nutrient Variables.&#34; width=&#34;672&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1: Figure 1.Principle Component Analysis of Nutrient Information on Egg and Dairy Products to Explore Relationship Between Nutrient Variables.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Angles between the vectors will tell you how much each characteristics correlate with each other.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Protein and Fat are positively correlated&lt;/li&gt;
+&lt;li&gt;Sugar and carbs are highly positively correlated&lt;/li&gt;
+&lt;li&gt;There is almost no correlation between sugar and energy_kcal&lt;/li&gt;
+&lt;li&gt;Fiber and fat are negatively correlated&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Snowshoe Hares</title>
+      <link>/project/snowshoehare_project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/snowshoehare_project/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;introduction-snowshoe-hare-analysis-of-age-weight-and-sex&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Introduction: Snowshoe Hare Analysis of Age, Weight, and Sex&lt;/h1&gt;
+&lt;p&gt;This project contains an analysis of age, weight, and sex of captured Snowshoe hares (Lepus americanus) in Tanna Valley, Alaska. The study used the capture-recapture method from 1999-2002. Snowshoe hares experience population fluctuations of 8-11 years and are recognized as a keystone species in northern boreal forests.&lt;/p&gt;
+&lt;div id=&#34;data-source-kielland-k.-f.-s.-chapin-r.-w.-ruess.-2017.-snowshoe-hare-physical-data-in-bonanza-creek-experimental-forest-1999-present.-environmental-data-initiative.-httpsdoi.org10.6073pasta03dce4856d79b91557d8e6ce2cbcdc14&#34; class=&#34;section level5&#34;&gt;
+&lt;h5&gt;Data Source: Kielland K., F. S. Chapin, R. W. Ruess. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present. Environmental Data Initiative. &lt;a href=&#34;https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14&#34; class=&#34;uri&#34;&gt;https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14&lt;/a&gt;&lt;/h5&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;images/snowshoe_hare_sc.png&#34; alt=&#34;Snowshoe Hare with White Fur During Winter. Photo Source: Sierra Club&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Snowshoe Hare with White Fur During Winter. Photo Source: Sierra Club&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-cleaning-for-analysis&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Data Cleaning for Analysis&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Cleaning data to only keep SEX AGE WEIGHT and for age only keep Juvenile (j) and Adult (A), and for sex only keep (m) and (f)
+
+hare_new &amp;lt;- hare %&amp;gt;% 
+  select(sex, age, weight) %&amp;gt;% 
+  drop_na(sex) %&amp;gt;% 
+  drop_na(age) %&amp;gt;% 
+  drop_na(weight) %&amp;gt;% 
+  filter(sex==&amp;quot;m&amp;quot; | sex==&amp;quot;f&amp;quot;) %&amp;gt;% 
+  filter(age==&amp;quot;a&amp;quot; | age==&amp;quot;j&amp;quot;) %&amp;gt;% 
+  mutate(age = ifelse(age == &amp;quot;a&amp;quot;, &amp;quot;Adult&amp;quot;, &amp;quot;Juvenile&amp;quot;)) %&amp;gt;% 
+  mutate(sex= ifelse(sex==&amp;quot;m&amp;quot;,&amp;quot;Male&amp;quot; ,&amp;quot;Female&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;visualizing-hare-data&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Visualizing Hare Data&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;jitter_hare &amp;lt;-ggplot(data=hare_new, aes(x=age, y=weight), textsize=1) +
+  geom_jitter(
+    aes(color = age,
+        pch = age)
+  ) +
+  facet_wrap(~sex) +
+  scale_y_continuous(expand = c(0,0), limits=c(0, 2000), breaks = seq(0,2000, 200)) +
+   labs(y=&amp;quot;Weight (grams) &amp;quot;, x=&amp;quot;Age&amp;quot;) +
+  theme (panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = &amp;quot;black&amp;quot;), plot.title = element_text(face=&amp;quot;bold&amp;quot;)) +
+  ggtitle(&amp;quot;Male and Female Hare Weight for Juveniles and Adults&amp;quot;) +
+   scale_color_manual(values = c(&amp;quot;Adult&amp;quot; = &amp;quot;red&amp;quot;, &amp;quot;Juvenile&amp;quot; = &amp;quot;black&amp;quot;)) 
+
+
+jitter_hare&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:unnamed-chunk-2&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/project/SnowshoeHare_project/index_files/figure-html/unnamed-chunk-2-1.png&#34; alt=&#34;Figure 1. Male and Female Hares: Age and Weight on Capture/Recapture from 1999-2002. Age is measured by juvenile and adult and weight is measured in grams.&#34; width=&#34;672&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1: Figure 1. Male and Female Hares: Age and Weight on Capture/Recapture from 1999-2002. Age is measured by juvenile and adult and weight is measured in grams.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-scatterplot-is-a-nice-way-to-visualize-the-weight-of-juvenile-and-adult-snowshoe-hares-for-both-males-and-females-in-order-to-see-which-sex-generally-weighs-more-at-both-life-stages.&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;The scatterplot is a nice way to visualize the weight of juvenile and adult snowshoe hares for both males and females in order to see which sex generally weighs more at both life stages.&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary-statistics-for-age-sex-and-weight-of-hares&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Summary Statistics for Age, Sex, and Weight of Hares&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;hare_counts &amp;lt;- hare_new %&amp;gt;% 
+  group_by(age) %&amp;gt;% 
+  count(sex) 
+
+hare_mean &amp;lt;- hare_new %&amp;gt;% 
+  group_by(age, sex) %&amp;gt;% 
+  mutate(mean_weight = mean(weight)) %&amp;gt;% 
+  group_by(age, mean_weight) %&amp;gt;% 
+  count(sex) %&amp;gt;% 
+  select(age,sex,mean_weight,n)
+
+
+table_hare &amp;lt;- kable(hare_mean, caption =&amp;quot;Table 1. Age, Sex, and Mean Weight of Snowshoe Hares in Tanna Valley, Alaska from 1999-2002.&amp;quot;, col.names = c(&amp;quot;Age&amp;quot;,&amp;quot;Sex&amp;quot;,&amp;quot;Mean Weight&amp;quot;,&amp;quot;Sample Size&amp;quot;)) %&amp;gt;% 
+  kable_styling(bootstrap_options = c(&amp;quot;striped&amp;quot;, &amp;quot;hover&amp;quot;, &amp;quot;condensed&amp;quot;, &amp;quot;responsive&amp;quot;))
+ 
+
+table_hare  &lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34;table table-striped table-hover table-condensed table-responsive&#34; style=&#34;margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;caption&gt;
+&lt;span id=&#34;tab:unnamed-chunk-3&#34;&gt;Table 1: &lt;/span&gt;Table 1. Age, Sex, and Mean Weight of Snowshoe Hares in Tanna Valley, Alaska from 1999-2002.
+&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Age
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Sex
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Mean Weight
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Sample Size
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Adult
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Male
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1499.1837
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+98
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Adult
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Female
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1503.2308
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+65
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Juvenile
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Female
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+939.3939
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+66
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Juvenile
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Male
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+989.0385
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+52
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div id=&#34;from-this-table-we-can-infer-that-as-adults-female-snow-hares-tend-to-weigh-more-than-males-but-as-juveniles-males-tend-to-weigh-more.&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;From this table we can infer that as adults, female Snow Hares tend to weigh more than males, but as juveniles males tend to weigh more.&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Steelhead Salmon Passage at Bonneville Dam</title>
+      <link>/project/steelhead/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/steelhead/</guid>
+      <description>
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Introduction:&lt;/h1&gt;
+&lt;p&gt;This project contains time series data for Steelhead Salmon passage across the Bonneville Dam in Oregon from 1939 - 2019. The analysis will include daily, seasonal, and yearly time series of salmon passage to visually and mathetmatically explore the fluctuations of the population over an 80 year time span.&lt;/p&gt;
+&lt;p&gt;Data source: Columbia River DART, Columbia Basin Research, University of Washington. (2019). Adult Passage Graphics &amp;amp; Text. Available from &lt;a href=&#34;http://www.cbr.washington.edu/dart/query/adult_graph_text&#34; class=&#34;uri&#34;&gt;http://www.cbr.washington.edu/dart/query/adult_graph_text&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;images/bon_dam.png&#34; alt=&#34;Bonneville Dam, Oregon. Photo Source: DiscoverNW&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Bonneville Dam, Oregon. Photo Source: DiscoverNW&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-analysis-and-cleaning&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Data Analysis and Cleaning&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#clean data and create new columns for appropriate date formats needed
+ 
+
+new_salmon &amp;lt;- steel %&amp;gt;% 
+  clean_names() %&amp;gt;% 
+  mutate(newdate = paste(year, mm_dd, sep = &amp;quot;-&amp;quot;)) %&amp;gt;% # get all 3 YDM
+  mutate(parse_data = lubridate::parse_date_time(newdate, &amp;quot;ydm&amp;quot;)) %&amp;gt;% 
+  mutate(final_date = yearmonth(parse_data)) %&amp;gt;% #coerce to tsibble `yearmonth` format
+  mutate(value= as.numeric(value)) %&amp;gt;% # make value numeric
+  drop_na(parse_data, value) %&amp;gt;% 
+  mutate(month = month(parse_data, label = TRUE)) # may want month later
+
+# Data Frame for totals of each month of each year
+year_month_salmon &amp;lt;- new_salmon %&amp;gt;% 
+  group_by(month,year) %&amp;gt;% 
+  summarize(total_salmon = sum(value))
+
+# Data frame for total salmon each year
+year_salmon &amp;lt;- new_salmon %&amp;gt;% 
+  group_by(year) %&amp;gt;% 
+  summarize(year_total = sum(value))&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;visualizing-daily-passage&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Visualizing Daily Passage&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# plot for daily passage
+sthead_gg &amp;lt;- ggplot(data = new_salmon, aes(x = parse_data, y = value)) +
+  geom_line() +
+   theme_minimal() +
+labs(x= &amp;quot;Day and Year&amp;quot;, y= &amp;quot;Total Steelhead Salmon Passage&amp;quot;) +
+scale_y_continuous(expand = c(0,0), breaks = seq(0,40000, by = 5000), labels = scales::comma)
+
+
+sthead_gg&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:unnamed-chunk-2&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/project/steelhead/index_files/figure-html/unnamed-chunk-2-1.png&#34; alt=&#34; Figure 1. Daily Steelhead Salmon Passage at Bonneville Dam from 1939-2019.&#34; width=&#34;672&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1:  Figure 1. Daily Steelhead Salmon Passage at Bonneville Dam from 1939-2019.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Daily passage of steelhead from 1939 - 2019. This plot shows the variation of daily passage throughout 80 years, with the lowest ever at -75 individuals (death) on March 17th, 2005 and the highest daily at over 34,000 August 13th, 2009.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;visualizing-seasonal-passage-monthly-passage-per-year&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Visualizing Seasonal Passage: Monthly Passage Per Year&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# season plot
+ steel_season&amp;lt;- ggplot(data = year_month_salmon, aes(x= month,  y = total_salmon, group= year)) +
+geom_line(aes(color= year))+
+  theme_minimal() +
+labs(x= &amp;quot;Month&amp;quot;, y= &amp;quot;Total Steelhead Salmon Passage&amp;quot;) +
+scale_y_continuous(expand = c(0,0), breaks = seq(0,450000, by = 50000), labels = scales::comma) +
+labs(color=&amp;#39;Year&amp;#39;) 
+
+# Add a color scheme from paletteer
+steel_season +
+  scale_color_paletteer_c(&amp;quot;pals::ocean.curl&amp;quot;) +
+  labs(color = &amp;#39;Year&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:unnamed-chunk-3&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/project/steelhead/index_files/figure-html/unnamed-chunk-3-1.png&#34; alt=&#34;Figure 2. Seasonality plot of Steelhead Salmon passage at Bonneville Dam. Steelhead counts are totaled for each month and visualized throughout the years 1939-2019.&#34; width=&#34;672&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 2: Figure 2. Seasonality plot of Steelhead Salmon passage at Bonneville Dam. Steelhead counts are totaled for each month and visualized throughout the years 1939-2019.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The season plot shows variation of monthly passages throughout the years. As seen in the plot, summer months of July, August, and September show the largest passage numbers through the years with the highest passage in July 2009 with over 350,000 salmon.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;annual-steelhead-passage-from-1939-2019&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Annual Steelhead Passage from 1939-2019&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Finalized Plot of Annual Steelhead
+
+ggplot(data = year_salmon, aes(x=year, y = year_total)) +
+  geom_line(color = &amp;quot;bisque4&amp;quot;) +
+  theme_minimal() +
+labs(x= &amp;quot;Year&amp;quot;, y= &amp;quot;Total Steelhead Salmon Passage&amp;quot;) +
+scale_y_continuous(expand = c(0,0), breaks = seq(0,700000, by = 100000), labels = scales::comma)&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:unnamed-chunk-4&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/project/steelhead/index_files/figure-html/unnamed-chunk-4-1.png&#34; alt=&#34;Figure 3. Annual counts of Steelhead Salmon passage at Bonneville Dam from 1939 - 2019. &#34; width=&#34;672&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 3: Figure 3. Annual counts of Steelhead Salmon passage at Bonneville Dam from 1939 - 2019.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The Steelhead population has seen fluctuations in their passage numbers since 1939, with an all time high in 2001 at over 633,000, but in recent years has plummeted to 77,000 in 2019.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>

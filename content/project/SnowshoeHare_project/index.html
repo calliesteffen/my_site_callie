@@ -1,0 +1,166 @@
+---
+title: "Snowshoe Hares"
+author: "Callie Steffen"
+date: "2/6/2020"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+---
+
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+
+
+<div id="introduction-snowshoe-hare-analysis-of-age-weight-and-sex" class="section level1">
+<h1>Introduction: Snowshoe Hare Analysis of Age, Weight, and Sex</h1>
+<p>This project contains an analysis of age, weight, and sex of captured Snowshoe hares (Lepus americanus) in Tanna Valley, Alaska. The study used the capture-recapture method from 1999-2002. Snowshoe hares experience population fluctuations of 8-11 years and are recognized as a keystone species in northern boreal forests.</p>
+<div id="data-source-kielland-k.-f.-s.-chapin-r.-w.-ruess.-2017.-snowshoe-hare-physical-data-in-bonanza-creek-experimental-forest-1999-present.-environmental-data-initiative.-httpsdoi.org10.6073pasta03dce4856d79b91557d8e6ce2cbcdc14" class="section level5">
+<h5>Data Source: Kielland K., F. S. Chapin, R. W. Ruess. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present. Environmental Data Initiative. <a href="https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14" class="uri">https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14</a></h5>
+<div class="figure">
+<img src="images/snowshoe_hare_sc.png" alt="Snowshoe Hare with White Fur During Winter. Photo Source: Sierra Club" />
+<p class="caption">Snowshoe Hare with White Fur During Winter. Photo Source: Sierra Club</p>
+</div>
+</div>
+</div>
+<div id="data-cleaning-for-analysis" class="section level1">
+<h1>Data Cleaning for Analysis</h1>
+<pre class="r"><code>#Cleaning data to only keep SEX AGE WEIGHT and for age only keep Juvenile (j) and Adult (A), and for sex only keep (m) and (f)
+
+hare_new &lt;- hare %&gt;% 
+  select(sex, age, weight) %&gt;% 
+  drop_na(sex) %&gt;% 
+  drop_na(age) %&gt;% 
+  drop_na(weight) %&gt;% 
+  filter(sex==&quot;m&quot; | sex==&quot;f&quot;) %&gt;% 
+  filter(age==&quot;a&quot; | age==&quot;j&quot;) %&gt;% 
+  mutate(age = ifelse(age == &quot;a&quot;, &quot;Adult&quot;, &quot;Juvenile&quot;)) %&gt;% 
+  mutate(sex= ifelse(sex==&quot;m&quot;,&quot;Male&quot; ,&quot;Female&quot;))</code></pre>
+</div>
+<div id="visualizing-hare-data" class="section level1">
+<h1>Visualizing Hare Data</h1>
+<pre class="r"><code>jitter_hare &lt;-ggplot(data=hare_new, aes(x=age, y=weight), textsize=1) +
+  geom_jitter(
+    aes(color = age,
+        pch = age)
+  ) +
+  facet_wrap(~sex) +
+  scale_y_continuous(expand = c(0,0), limits=c(0, 2000), breaks = seq(0,2000, 200)) +
+   labs(y=&quot;Weight (grams) &quot;, x=&quot;Age&quot;) +
+  theme (panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = &quot;black&quot;), plot.title = element_text(face=&quot;bold&quot;)) +
+  ggtitle(&quot;Male and Female Hare Weight for Juveniles and Adults&quot;) +
+   scale_color_manual(values = c(&quot;Adult&quot; = &quot;red&quot;, &quot;Juvenile&quot; = &quot;black&quot;)) 
+
+
+jitter_hare</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<img src="/project/SnowshoeHare_project/index_files/figure-html/unnamed-chunk-2-1.png" alt="Figure 1. Male and Female Hares: Age and Weight on Capture/Recapture from 1999-2002. Age is measured by juvenile and adult and weight is measured in grams." width="672" />
+<p class="caption">
+Figure 1: Figure 1. Male and Female Hares: Age and Weight on Capture/Recapture from 1999-2002. Age is measured by juvenile and adult and weight is measured in grams.
+</p>
+</div>
+<div id="the-scatterplot-is-a-nice-way-to-visualize-the-weight-of-juvenile-and-adult-snowshoe-hares-for-both-males-and-females-in-order-to-see-which-sex-generally-weighs-more-at-both-life-stages." class="section level4">
+<h4>The scatterplot is a nice way to visualize the weight of juvenile and adult snowshoe hares for both males and females in order to see which sex generally weighs more at both life stages.</h4>
+</div>
+</div>
+<div id="summary-statistics-for-age-sex-and-weight-of-hares" class="section level1">
+<h1>Summary Statistics for Age, Sex, and Weight of Hares</h1>
+<pre class="r"><code>hare_counts &lt;- hare_new %&gt;% 
+  group_by(age) %&gt;% 
+  count(sex) 
+
+hare_mean &lt;- hare_new %&gt;% 
+  group_by(age, sex) %&gt;% 
+  mutate(mean_weight = mean(weight)) %&gt;% 
+  group_by(age, mean_weight) %&gt;% 
+  count(sex) %&gt;% 
+  select(age,sex,mean_weight,n)
+
+
+table_hare &lt;- kable(hare_mean, caption =&quot;Table 1. Age, Sex, and Mean Weight of Snowshoe Hares in Tanna Valley, Alaska from 1999-2002.&quot;, col.names = c(&quot;Age&quot;,&quot;Sex&quot;,&quot;Mean Weight&quot;,&quot;Sample Size&quot;)) %&gt;% 
+  kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;, &quot;responsive&quot;))
+ 
+
+table_hare  </code></pre>
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-3">Table 1: </span>Table 1. Age, Sex, and Mean Weight of Snowshoe Hares in Tanna Valley, Alaska from 1999-2002.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Age
+</th>
+<th style="text-align:left;">
+Sex
+</th>
+<th style="text-align:right;">
+Mean Weight
+</th>
+<th style="text-align:right;">
+Sample Size
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Adult
+</td>
+<td style="text-align:left;">
+Male
+</td>
+<td style="text-align:right;">
+1499.1837
+</td>
+<td style="text-align:right;">
+98
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Adult
+</td>
+<td style="text-align:left;">
+Female
+</td>
+<td style="text-align:right;">
+1503.2308
+</td>
+<td style="text-align:right;">
+65
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Juvenile
+</td>
+<td style="text-align:left;">
+Female
+</td>
+<td style="text-align:right;">
+939.3939
+</td>
+<td style="text-align:right;">
+66
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Juvenile
+</td>
+<td style="text-align:left;">
+Male
+</td>
+<td style="text-align:right;">
+989.0385
+</td>
+<td style="text-align:right;">
+52
+</td>
+</tr>
+</tbody>
+</table>
+<div id="from-this-table-we-can-infer-that-as-adults-female-snow-hares-tend-to-weigh-more-than-males-but-as-juveniles-males-tend-to-weigh-more." class="section level4">
+<h4>From this table we can infer that as adults, female Snow Hares tend to weigh more than males, but as juveniles males tend to weigh more.</h4>
+</div>
+</div>

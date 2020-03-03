@@ -1,0 +1,112 @@
+---
+title: "Hawaiian Islands: Landcover and Watersheds"
+author: "Callie Steffen"
+date: "2/20/2020"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+---
+
+
+
+<div id="introduction" class="section level1">
+<h1>Introduction:</h1>
+<p>This analysis will explore land use and watersheds for the big island of Hawaii. The land use and land cover data was primarily based on the interpretation of aerial photography from the 1970’s and 1980’s, with secondary sources including land use maps and surveys. Watersheds are shown for the 8 major islands and measured in square miles.</p>
+<p>See metadata (linked below) for specific watershed names and more detailed descriptions of what is included in the 7 categories of land cover.</p>
+<p>Land use Data Source: Land Use Land Cover of main Hawaiian Islands as of 1976 Source: 1:100,000 1976 Digital GIRAS (Geographic Information Retrieval and Analysis) files. <a href="http://geoportal.hawaii.gov/datasets/land-use-land-cover-lulc" class="uri">http://geoportal.hawaii.gov/datasets/land-use-land-cover-lulc</a></p>
+<p>Watershed Data Source: State of Hawaii Commission on Water Resource Management (CWRM), 2008. <a href="http://geoportal.hawaii.gov/datasets/watersheds" class="uri">http://geoportal.hawaii.gov/datasets/watersheds</a></p>
+<div class="figure">
+<img src="images/hawaii.png" alt="Shoreline Imagery of Hawaiian Islands. Photo Source: University of Hawaii MANOA, Coastal Geology Group" />
+<p class="caption">Shoreline Imagery of Hawaiian Islands. Photo Source: University of Hawaii MANOA, Coastal Geology Group</p>
+</div>
+</div>
+<div id="data-analysis-and-cleaning" class="section level1">
+<h1>Data Analysis and Cleaning</h1>
+<pre class="r"><code>plot(watershed)</code></pre>
+<pre class="r"><code>plot(landuse)</code></pre>
+<pre class="r"><code>st_crs(landuse) #4326
+st_crs(watershed) #4326
+
+# recategorize landcover column data into categories based off of the metadata so we have fewer categories to visualize making for a cleaner map
+
+landuse_metadata &lt;- landuse %&gt;%
+  mutate(
+    landcover_md = case_when(
+      landcover %in% c(&quot;Residential&quot;,
+                       &quot;Commercial and Services&quot;,
+                       &quot;Industrial&quot;, 
+                       &quot;Transportation, Communications and Utilities&quot;, 
+                       &quot;Industrial and Commercial Complexes&quot;,
+                       &quot;Mixed Urban or Built-up Land&quot;,
+                       &quot;Other Urban or Built-up Land&quot;) ~&quot;Urban or Built-up Land&quot;,
+      landcover %in% c(&quot;Cropland and Pasture&quot;, 
+                       &quot;Orchards, Groves, Vineyards, Nurseries and Ornamental Horticultural Areas&quot;, &quot;Confined Feeding Operations&quot;,&quot;Other Agricultural Land&quot;) ~ &quot;Agricultural Land&quot;,
+      landcover %in% c(&quot;Herbaceous Rangeland&quot;,
+                       &quot;Shrub and Brush Rangeland&quot;,
+                       &quot;Mixed Rangeland&quot;) ~ &quot;Rangeland&quot;,
+      landcover %in% c(&quot;Deciduous Forest Land&quot;,
+                       &quot;Evergreen Forest Land&quot;,
+                       &quot;Mixed Forest Land&quot;) ~ &quot;Forest Land&quot;,
+      landcover %in% c(&quot;Streams and Canals&quot;,
+                       &quot;Lakes&quot;,
+                       &quot;Reservoirs&quot;,
+                       &quot;Bays and Estuaries&quot;) ~ &quot;Water&quot;,
+      landcover %in% c(&quot;Dry Salt Flats&quot;,
+                       &quot;Beaches&quot;,
+                       &quot;Sandy Areas Other than Beaches&quot;,
+                       &quot;Bare Exposed Rock&quot;,
+                       &quot;Strip Mines, Quarries and Gravel Pits&quot;,
+                       &quot;Transitional Areas&quot;,
+                       &quot;Mixed Barren Land&quot;) ~ &quot;Barren Land&quot; ,
+       landcover %in% c(&quot;Shrub and Brush Tundra&quot;,
+                       &quot;Herbaceous Tundra&quot;,
+                       &quot;Bare Ground&quot;,
+                       &quot;Wet Tundra&quot;,
+                       &quot;Mixed Tundra&quot;) ~ &quot;Tundra&quot; ,
+       landcover %in% c(&quot;Perrenial Snowfield&quot;,
+                       &quot;Glaciers&quot;) ~ &quot;Perrenial Snow&quot;,
+      landcover %in% c(&quot;Forested Wetland&quot;,
+                       &quot;Nonforested Wetland&quot;) ~ &quot;Wetland&quot;))</code></pre>
+</div>
+<div id="map-of-land-cover-categories-for-all-8-islands-hawaii" class="section level1">
+<h1>Map of Land Cover Categories for all 8 islands (Hawaii)</h1>
+<pre class="r"><code># Plot for Land Use on all of hawaiian islands
+landcover_gg &lt;- ggplot(data = landuse_metadata) +
+  geom_sf(data = landuse_metadata,color = &quot;NA&quot;, aes(fill = landcover_md)) +
+  xlab(&quot;Longitude&quot;) + ylab(&quot;Latitude&quot;) +
+  annotation_scale(location = &quot;bl&quot;, width_hint = 0.5) +
+    annotation_north_arrow(location = &quot;bl&quot;, which_north = &quot;true&quot;, 
+        pad_x = unit(0.75, &quot;in&quot;), pad_y = unit(0.5, &quot;in&quot;),
+        style = north_arrow_fancy_orienteering) +
+    coord_sf(crs = st_crs(4326)) +
+  labs(fill=&#39;Land Cover Category&#39;) +
+  scale_fill_discrete(na.translate=F)
+
+landcover_gg</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<img src="/project/hawaii/index_files/figure-html/unnamed-chunk-2-1.png" alt="Figure 1. Land Cover categories for all 8 islands in Hawaii. Data was recategorized into 7 main categories." width="672" />
+<p class="caption">
+Figure 1: Figure 1. Land Cover categories for all 8 islands in Hawaii. Data was recategorized into 7 main categories.
+</p>
+</div>
+</div>
+<div id="map-of-watersheds-for-all-8-islands-hawaii" class="section level1">
+<h1>Map of Watersheds for all 8 islands (Hawaii)</h1>
+<pre class="r"><code>#plot for watersheds on all of hawaiian islands
+
+ggplot(data = watershed) +
+  geom_sf(data = watershed,color = &quot;NA&quot;, aes(fill = area_sqmi)) +
+  xlab(&quot;Longitude&quot;) + ylab(&quot;Latitude&quot;) +
+  annotation_scale(location = &quot;bl&quot;, width_hint = 0.5) +
+    annotation_north_arrow(location = &quot;bl&quot;, which_north = &quot;true&quot;, 
+        pad_x = unit(0.75, &quot;in&quot;), pad_y = unit(0.5, &quot;in&quot;),
+        style = north_arrow_fancy_orienteering) +
+    coord_sf(crs = st_crs(4326)) +
+   labs(fill=&#39;Area of Watershed (sqmi)&#39;)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-3"></span>
+<img src="/project/hawaii/index_files/figure-html/unnamed-chunk-3-1.png" alt="Figure 2. Watersheds of the 8 islands of Hawaii. There are 558 watersheds between the 8 islands and they are measured in square miles and each has an individual name." width="672" />
+<p class="caption">
+Figure 2: Figure 2. Watersheds of the 8 islands of Hawaii. There are 558 watersheds between the 8 islands and they are measured in square miles and each has an individual name.
+</p>
+</div>
+</div>

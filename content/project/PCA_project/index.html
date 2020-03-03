@@ -1,0 +1,80 @@
+---
+title: "PCA Analysis of Dairy Products"
+author: "Callie Steffen"
+date: "2/2/2020"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+
+---
+
+
+
+<div id="introduction-pca-of-usda-food-group-eggs-and-dairy-products" class="section level1">
+<h1>Introduction: PCA of USDA Food Group: Eggs and Dairy Products</h1>
+<p>This Principle Component Analysis (PCA) explores relationships of nutrient variables of Dairy and Egg Products based off data from the United States Department of Agriculture. By performing a PCA, we can simplify the dimensions of the data while still explaining a majority of the variance</p>
+<p>Data source: U.S. Department of Agriculture, Agricultural Research Service. 2018. USDA Food and Nutrient Database for Dietary Studies 2015-2016. Food Surveys Research Group Home Page, <a href="http://www.ars.usda.gov/nea/bhnrc/fsrg" class="uri">http://www.ars.usda.gov/nea/bhnrc/fsrg</a></p>
+<div class="figure">
+<img src="images/usda_dairy.png" alt="Dairy Products. Photo Source: USDA" />
+<p class="caption">Dairy Products. Photo Source: USDA</p>
+</div>
+</div>
+<div id="data-cleaning-for-analysis" class="section level1">
+<h1>Data Cleaning for Analysis</h1>
+<pre class="r"><code>#Interested in exploring the food group of dairy and eggs, so will filter data for that food group and differnt nutrient aspects
+
+dairy_df &lt;- usda %&gt;% 
+  clean_names() %&gt;% 
+  filter(food_group == c(&quot;Dairy and Egg Products&quot;)) %&gt;% 
+  select(food_group,protein_g,sugar_g,fat_g,carb_g,energy_kcal,fiber_g)
+
+#Exploring any NAs
+summary(dairy_df)
+skim(dairy_df)
+gg_miss_var(dairy_df)</code></pre>
+<p><img src="/project/PCA_project/index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre class="r"><code># No missing values</code></pre>
+</div>
+<div id="analysis-running-pca-on-dairy-data" class="section level1">
+<h1>Analysis: Running PCA on Dairy Data</h1>
+<pre class="r"><code>#pca
+dairy_pca &lt;- prcomp(dairy_df[2:7], scale = TRUE)
+
+dairy_pca
+
+summary(dairy_pca)
+##my frist two PC explain ~69% of data 
+
+ 
+plot(dairy_pca) #shows variance</code></pre>
+<pre class="r"><code>biplot(dairy_pca) #looks messy</code></pre>
+<p>Between Principle Component 1 and Principle Component 2, ~69% of variance is captured. This simplifies the the number of dimensions, and by only using 2 of the 6 Principle Components (axes) we are still able to explain over half of the variance of the data.</p>
+</div>
+<div id="visualizing-biplot-of-pca" class="section level1">
+<h1>Visualizing Biplot of PCA</h1>
+<pre class="r"><code>#Visualize with ggfortify for a cleaner graph
+dairy_biplot &lt;- autoplot(dairy_pca, 
+                      colour = NA,
+                      loadings.label = TRUE,
+                      loadings.label.size = 4,
+                      loadings.label.colour = &quot;black&quot;,
+                      loadings.label.repel = TRUE) +
+    theme(axis.title = element_text(face=&quot;bold&quot;)) +
+  theme_minimal()
+  
+
+dairy_biplot </code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-3"></span>
+<img src="/project/PCA_project/index_files/figure-html/unnamed-chunk-3-1.png" alt="Figure 1.Principle Component Analysis of Nutrient Information on Egg and Dairy Products to Explore Relationship Between Nutrient Variables." width="672" />
+<p class="caption">
+Figure 1: Figure 1.Principle Component Analysis of Nutrient Information on Egg and Dairy Products to Explore Relationship Between Nutrient Variables.
+</p>
+</div>
+<p>Angles between the vectors will tell you how much each characteristics correlate with each other.</p>
+<ul>
+<li>Protein and Fat are positively correlated</li>
+<li>Sugar and carbs are highly positively correlated</li>
+<li>There is almost no correlation between sugar and energy_kcal</li>
+<li>Fiber and fat are negatively correlated</li>
+</ul>
+</div>

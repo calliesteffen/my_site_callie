@@ -1,0 +1,99 @@
+---
+title: "Snowshoe Hares"
+author: "Callie Steffen"
+date: "2/6/2020"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+---
+
+```{r setup, echo=TRUE,include=FALSE}
+##Loading Packages
+library(tidyverse)
+library(janitor)
+library(kableExtra)
+
+##read in data
+hare <- read_csv("showshoe_lter.csv")
+```
+
+#Introduction: Snowshoe Hare Analysis of Age, Weight, and Sex
+
+This project contains an analysis of age, weight, and sex of captured Snowshoe hares (Lepus americanus) in Tanna Valley, Alaska. The study used the capture-recapture method from 1999-2002. Snowshoe hares experience population fluctuations of 8-11 years and are recognized as a keystone species in northern boreal forests. 
+
+#####Data Source: Kielland K., F. S. Chapin, R. W. Ruess. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present. Environmental Data Initiative. https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14
+
+![Snowshoe Hare with White Fur During Winter. Photo Source: Sierra Club](images/snowshoe_hare_sc.png)
+
+
+
+#Data Cleaning for Analysis
+```{r,echo=TRUE, message=FALSE,warning=FALSE}
+
+
+#Cleaning data to only keep SEX AGE WEIGHT and for age only keep Juvenile (j) and Adult (A), and for sex only keep (m) and (f)
+
+hare_new <- hare %>% 
+  select(sex, age, weight) %>% 
+  drop_na(sex) %>% 
+  drop_na(age) %>% 
+  drop_na(weight) %>% 
+  filter(sex=="m" | sex=="f") %>% 
+  filter(age=="a" | age=="j") %>% 
+  mutate(age = ifelse(age == "a", "Adult", "Juvenile")) %>% 
+  mutate(sex= ifelse(sex=="m","Male" ,"Female"))
+ 
+
+
+```
+
+#Visualizing Hare Data
+```{r, fig.cap="Figure 1. Male and Female Hares: Age and Weight on Capture/Recapture from 1999-2002. Age is measured by juvenile and adult and weight is measured in grams."}
+
+jitter_hare <-ggplot(data=hare_new, aes(x=age, y=weight), textsize=1) +
+  geom_jitter(
+    aes(color = age,
+        pch = age)
+  ) +
+  facet_wrap(~sex) +
+  scale_y_continuous(expand = c(0,0), limits=c(0, 2000), breaks = seq(0,2000, 200)) +
+   labs(y="Weight (grams) ", x="Age") +
+  theme (panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black"), plot.title = element_text(face="bold")) +
+  ggtitle("Male and Female Hare Weight for Juveniles and Adults") +
+   scale_color_manual(values = c("Adult" = "red", "Juvenile" = "black")) 
+
+
+jitter_hare
+
+  
+```
+
+####The scatterplot is a nice way to visualize the weight of juvenile and adult snowshoe hares for both males and females in order to see which sex generally weighs more at both life stages.
+
+#Summary Statistics for Age, Sex, and Weight of Hares
+```{r}
+
+
+hare_counts <- hare_new %>% 
+  group_by(age) %>% 
+  count(sex) 
+
+hare_mean <- hare_new %>% 
+  group_by(age, sex) %>% 
+  mutate(mean_weight = mean(weight)) %>% 
+  group_by(age, mean_weight) %>% 
+  count(sex) %>% 
+  select(age,sex,mean_weight,n)
+
+
+table_hare <- kable(hare_mean, caption ="Table 1. Age, Sex, and Mean Weight of Snowshoe Hares in Tanna Valley, Alaska from 1999-2002.", col.names = c("Age","Sex","Mean Weight","Sample Size")) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+ 
+
+table_hare  
+
+```
+
+
+####From this table we can infer that as adults, female Snow Hares tend to weigh more than males, but as juveniles males tend to weigh more. 

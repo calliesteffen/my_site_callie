@@ -1,0 +1,128 @@
+---
+title: "Steelhead Salmon Passage at Bonneville Dam"
+author: "Callie Steffen"
+date: "2/20/2020"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+
+#Loading Packages
+library(tidyverse)
+library(janitor)
+library(here)
+library(kableExtra)
+library(naniar)
+library(skimr)
+library(ggfortify)
+library(prettydoc)
+library(lubridate)
+library(paletteer)
+ 
+library(tsibble)
+library(fable)
+library(fabletools)
+library(feasts)
+library(forecast)
+
+#reading in data
+steel<-read_csv("cbr_fish_passage_bonneville_allyrs_steelhead.csv")
+
+
+```
+
+
+# Introduction:
+
+This project contains time series data for Steelhead Salmon passage across the Bonneville Dam in Oregon from 1939 - 2019. The analysis will include daily, seasonal, and yearly time series of salmon passage to visually and mathetmatically explore the fluctuations of the population over an 80 year time span. 
+
+Data source: 
+ Columbia River DART, Columbia Basin Research, University of Washington. (2019). Adult Passage Graphics & Text. Available from http://www.cbr.washington.edu/dart/query/adult_graph_text
+
+ 
+ 
+![Bonneville Dam, Oregon. Photo Source: DiscoverNW](images/bon_dam.png)
+
+# Data Analysis and Cleaning
+
+```{r}
+
+#clean data and create new columns for appropriate date formats needed
+ 
+
+new_salmon <- steel %>% 
+  clean_names() %>% 
+  mutate(newdate = paste(year, mm_dd, sep = "-")) %>% # get all 3 YDM
+  mutate(parse_data = lubridate::parse_date_time(newdate, "ydm")) %>% 
+  mutate(final_date = yearmonth(parse_data)) %>% #coerce to tsibble `yearmonth` format
+  mutate(value= as.numeric(value)) %>% # make value numeric
+  drop_na(parse_data, value) %>% 
+  mutate(month = month(parse_data, label = TRUE)) # may want month later
+
+# Data Frame for totals of each month of each year
+year_month_salmon <- new_salmon %>% 
+  group_by(month,year) %>% 
+  summarize(total_salmon = sum(value))
+
+# Data frame for total salmon each year
+year_salmon <- new_salmon %>% 
+  group_by(year) %>% 
+  summarize(year_total = sum(value))
+```
+
+# Visualizing Daily Passage
+```{r, fig.cap = " Figure 1. Daily Steelhead Salmon Passage at Bonneville Dam from 1939-2019."}
+
+# plot for daily passage
+sthead_gg <- ggplot(data = new_salmon, aes(x = parse_data, y = value)) +
+  geom_line() +
+   theme_minimal() +
+labs(x= "Day and Year", y= "Total Steelhead Salmon Passage") +
+scale_y_continuous(expand = c(0,0), breaks = seq(0,40000, by = 5000), labels = scales::comma)
+
+
+sthead_gg
+  
+  
+
+```
+
+Daily passage of steelhead from 1939 - 2019. This plot shows the variation of daily passage throughout 80 years, with the lowest ever at -75 individuals (death) on March 17th, 2005 and the highest daily at over 34,000 August 13th, 2009. 
+
+#Visualizing Seasonal Passage: Monthly Passage Per Year 
+```{r, fig.cap= "Figure 2. Seasonality plot of Steelhead Salmon passage at Bonneville Dam. Steelhead counts are totaled for each month and visualized throughout the years 1939-2019."}
+
+# season plot
+ steel_season<- ggplot(data = year_month_salmon, aes(x= month,  y = total_salmon, group= year)) +
+geom_line(aes(color= year))+
+  theme_minimal() +
+labs(x= "Month", y= "Total Steelhead Salmon Passage") +
+scale_y_continuous(expand = c(0,0), breaks = seq(0,450000, by = 50000), labels = scales::comma) +
+labs(color='Year') 
+
+# Add a color scheme from paletteer
+steel_season +
+  scale_color_paletteer_c("pals::ocean.curl") +
+  labs(color = 'Year')
+
+```
+
+
+The season plot shows variation of monthly passages throughout the years. As seen in the plot, summer months of July, August, and September show the largest passage numbers through the years with the highest passage in July 2009 with over 350,000 salmon. 
+
+# Annual Steelhead Passage from 1939-2019
+```{r, fig.cap= "Figure 3. Annual counts of Steelhead Salmon passage at Bonneville Dam from 1939 - 2019. "}
+
+#Finalized Plot of Annual Steelhead
+
+ggplot(data = year_salmon, aes(x=year, y = year_total)) +
+  geom_line(color = "bisque4") +
+  theme_minimal() +
+labs(x= "Year", y= "Total Steelhead Salmon Passage") +
+scale_y_continuous(expand = c(0,0), breaks = seq(0,700000, by = 100000), labels = scales::comma)
+```
+
+The Steelhead population has seen fluctuations in their passage numbers since 1939, with an all time high in 2001 at over 633,000, but in recent years has plummeted to 77,000 in 2019.

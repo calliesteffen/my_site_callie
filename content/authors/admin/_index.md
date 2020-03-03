@@ -15,8 +15,9 @@ education:
 email: ""
 interests:
 - Marine Mammal Research and Conservation
-- Data Science
+- Environmental Data Science
 - Conservation Planning
+- Marine Policy and Resource Management
 name: Callie Steffen
 organizations:
 - name: University of California, Santa Barbara 
@@ -26,21 +27,16 @@ social:
 - icon: envelope
   icon_pack: fas
   link: '#contact'
-- icon: twitter
-  icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
-- icon: google-scholar
-  icon_pack: ai
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/calliesteffen
+- icon: linkedin
+  icon_pack: fab
+  link: https://www.linkedin.com/in/callie-steffen-b02208b3/
 superuser: true
 user_groups:
 - Researchers
 - Visitors
 ---
 
-Callie Steffen is a graudate student at the Bren School of Environmental Science and Management.Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-
+Callie Steffen is a graudate student at the Bren School of Environmental Science and Management. Her research interests include environmental and human impacts on marine mammal populations.

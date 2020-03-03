@@ -1,0 +1,133 @@
+---
+title: "Hawaiian Islands: Landcover and Watersheds"
+author: "Callie Steffen"
+date: "2/20/2020"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+
+library(tidyverse)
+library(here)
+library(janitor)
+library(raster)
+library(sf)
+library(tmap)
+library(tmaptools)
+library(ggspatial)
+
+landuse <- read_sf("Land_Use_Land_Cover_LULC.shp")
+
+watershed <- read_sf("Watersheds.shp")
+
+```
+
+# Introduction: 
+
+This analysis will explore land use and watersheds for the big island of Hawaii. The land use and land cover data was primarily based on the interpretation of aerial photography from the 1970's and 1980's, with secondary sources including land use maps and surveys. Watersheds are shown for the 8 major islands and measured in square miles.
+
+See metadata (linked below) for specific watershed names and more detailed descriptions of what is included in the 7 categories of land cover.
+
+Land use Data Source:
+Land Use Land Cover of main Hawaiian Islands as of 1976 Source:	1:100,000 1976 Digital GIRAS (Geographic Information Retrieval and Analysis) files.  http://geoportal.hawaii.gov/datasets/land-use-land-cover-lulc
+
+Watershed Data Source: State of Hawaii Commission on Water Resource Management (CWRM), 2008.
+ http://geoportal.hawaii.gov/datasets/watersheds
+
+![Shoreline Imagery of Hawaiian Islands. Photo Source: University of Hawaii MANOA, Coastal Geology Group](images/hawaii.png)
+
+
+# Data Analysis and Cleaning
+```{r, results= FALSE , results='hide', fig.show='hide'}
+
+plot(watershed)
+plot(landuse)
+st_crs(landuse) #4326
+st_crs(watershed) #4326
+
+# recategorize landcover column data into categories based off of the metadata so we have fewer categories to visualize making for a cleaner map
+
+landuse_metadata <- landuse %>%
+  mutate(
+    landcover_md = case_when(
+      landcover %in% c("Residential",
+                       "Commercial and Services",
+                       "Industrial", 
+                       "Transportation, Communications and Utilities", 
+                       "Industrial and Commercial Complexes",
+                       "Mixed Urban or Built-up Land",
+                       "Other Urban or Built-up Land") ~"Urban or Built-up Land",
+      landcover %in% c("Cropland and Pasture", 
+                       "Orchards, Groves, Vineyards, Nurseries and Ornamental Horticultural Areas", "Confined Feeding Operations","Other Agricultural Land") ~ "Agricultural Land",
+      landcover %in% c("Herbaceous Rangeland",
+                       "Shrub and Brush Rangeland",
+                       "Mixed Rangeland") ~ "Rangeland",
+      landcover %in% c("Deciduous Forest Land",
+                       "Evergreen Forest Land",
+                       "Mixed Forest Land") ~ "Forest Land",
+      landcover %in% c("Streams and Canals",
+                       "Lakes",
+                       "Reservoirs",
+                       "Bays and Estuaries") ~ "Water",
+      landcover %in% c("Dry Salt Flats",
+                       "Beaches",
+                       "Sandy Areas Other than Beaches",
+                       "Bare Exposed Rock",
+                       "Strip Mines, Quarries and Gravel Pits",
+                       "Transitional Areas",
+                       "Mixed Barren Land") ~ "Barren Land" ,
+       landcover %in% c("Shrub and Brush Tundra",
+                       "Herbaceous Tundra",
+                       "Bare Ground",
+                       "Wet Tundra",
+                       "Mixed Tundra") ~ "Tundra" ,
+       landcover %in% c("Perrenial Snowfield",
+                       "Glaciers") ~ "Perrenial Snow",
+      landcover %in% c("Forested Wetland",
+                       "Nonforested Wetland") ~ "Wetland"))
+      
+  
+
+```
+
+# Map of Land Cover Categories for all 8 islands (Hawaii)
+```{r, fig.cap= "Figure 1. Land Cover categories for all 8 islands in Hawaii. Data was recategorized into 7 main categories."}
+# Plot for Land Use on all of hawaiian islands
+landcover_gg <- ggplot(data = landuse_metadata) +
+  geom_sf(data = landuse_metadata,color = "NA", aes(fill = landcover_md)) +
+  xlab("Longitude") + ylab("Latitude") +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+    annotation_north_arrow(location = "bl", which_north = "true", 
+        pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+        style = north_arrow_fancy_orienteering) +
+    coord_sf(crs = st_crs(4326)) +
+  labs(fill='Land Cover Category') +
+  scale_fill_discrete(na.translate=F)
+
+landcover_gg
+
+
+
+```
+
+# Map of Watersheds for all 8 islands (Hawaii)
+```{r, fig.cap= "Figure 2. Watersheds of the 8 islands of Hawaii. There are 558 watersheds between the 8 islands and they are measured in square miles and each has an individual name."}
+#plot for watersheds on all of hawaiian islands
+
+ggplot(data = watershed) +
+  geom_sf(data = watershed,color = "NA", aes(fill = area_sqmi)) +
+  xlab("Longitude") + ylab("Latitude") +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+    annotation_north_arrow(location = "bl", which_north = "true", 
+        pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+        style = north_arrow_fancy_orienteering) +
+    coord_sf(crs = st_crs(4326)) +
+   labs(fill='Area of Watershed (sqmi)')
+
+
+
+```
+
